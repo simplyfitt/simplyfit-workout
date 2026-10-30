@@ -1,0 +1,252 @@
+<!doctype html><html lang="en"><head>
+<meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover">
+<link rel=stylesheet href=/style.css><title>SimplyFit</title></head>
+<body>
+<div id=app></div>
+<script>
+const tok=location.pathname.split('/').pop();
+let plan=null, logs={}, view='home', curDay=0, sessionOn=false, restLeft=0, restTimer=null, activeSec=0;
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const SEC={warmup:'Warm-up',main:'Main workout',optional:'Optional',cardio:'Cardio',cooldown:'Cool-down'};
+const ORDER=['warmup','main','optional','cardio','cooldown'];
+const key=(d,sec,j,k)=>`${d}:${sec}:${j}:${k}`;
+const getLog=(d,sec,j,k)=>logs[key(d,sec,j,k)]||{};
+function setLog(d,sec,j,k,patch){const id=key(d,sec,j,k);logs[id]={...getLog(d,sec,j,k),...patch};persist()}
+function persist(){localStorage['sf-logs:'+tok]=JSON.stringify(logs);fetch('/api/logs/'+tok,{method:'PUT',headers:{'Content-Type':'application/json'},body:JSON.stringify({logs})}).catch(()=>{})}
+function loadLocal(){try{logs=JSON.parse(localStorage['sf-logs:'+tok]||'{}')}catch(e){logs={}}}
+function logMode(sec){if(sec==='warmup')return'time_reps';if(sec==='cooldown')return'time';return'weight_reps'}
+function prescTime(e){
+  const s=String(e.reps||'');
+  const m=s.match(/(\d+(?:\.\d+)?)\s*sec/i); if(m) return String(Math.round(+m[1]));
+  if(/^\d+(?:\.\d+)?$/.test(s.trim())) return String(Math.round(+s));
+  return '';
+}
+function prescReps(e){
+  const s=String(e.reps||'');
+  if(/\d+\s*sec/i.test(s) && !/\d+\s*reps?/i.test(s)) return '';
+  if(/^\d+(?:\.\d+)?$/.test(s.trim()) && /\./.test(s)) return '';
+  const m=s.match(/(\d+)/); return m?m[1]:'';
+}
+function defaultRest(sec){if(sec==='warmup')return 30;if(sec==='cooldown')return 15;if(sec==='cardio')return 45;return 90}
+function parseRest(e,sec){
+  const blob=[e.notes,e.rest,e.reps].map(x=>String(x||'')).join(' ');
+  const m=blob.match(/Rest\s*[:\-]?\s*(\d+(?:\.\d+)?)/i);
+  if(m) return Math.round(+m[1]);
+  if(e.rest!=null && /\d+/.test(String(e.rest))) return Math.round(+String(e.rest).match(/\d+(?:\.\d+)?/)[0]);
+  return defaultRest(sec);
+}
+function todayIndex(){const n=new Date().getDay(); const monFirst=(n+6)%7; return Math.min(monFirst, (plan.week.days.length-1))}
+function dayProgress(di){const day=plan.week.days[di];if(!day)return[0,0];let total=0,done=0;grouped(day).forEach(([sec,list])=>list.forEach((e,j)=>{const sets=+e.sets||0;for(let k=0;k<sets;k++){total++;if(getLog(di,sec,j,k).done)done++}}));return[done,total]}
+function grouped(day){const ex=day.exercises||[];const has=ex.some(e=>e.section);if(!has)return[['main',ex]];const g={};ex.forEach(e=>{(g[e.section||'main']=g[e.section||'main']||[]).push(e)});const out=[];ORDER.forEach(s=>{if(g[s]?.length)out.push([s,g[s]])});Object.keys(g).forEach(s=>{if(!ORDER.includes(s))out.push([s,g[s]])});return out}
+function ensureRestOverlay(){
+  let el=document.getElementById('restOverlay');
+  if(el) return el;
+  el=document.createElement('div');
+  el.id='restOverlay';
+  el.className='rest-overlay hidden';
+  el.innerHTML=`<div class=rest-card>
+    <p class=rest-label>Rest</p>
+    <div class=restn id=restCount>0</div>
+    <div class=rest-actions>
+      <button type=button class="btn ghost" onclick="bumpRest(-15)">−15</button>
+      <button type=button class="btn primary" onclick="skipRest()">Skip</button>
+      <button type=button class="btn ghost" onclick="bumpRest(15)">+15</button>
+    </div>
+  </div>`;
+  document.body.appendChild(el);
+  return el;
+}
+function paintRest(){
+  const el=ensureRestOverlay();
+  const n=document.getElementById('restCount');
+  if(restLeft>0){
+    el.classList.remove('hidden');
+    if(n) n.textContent=restLeft+'s';
+    document.body.classList.add('resting');
+  } else {
+    el.classList.add('hidden');
+    document.body.classList.remove('resting');
+  }
+}
+function startRest(secs){
+  clearInterval(restTimer);
+  restLeft=Math.max(0, Math.round(+secs||0));
+  paintRest();
+  if(restLeft<=0) return;
+  restTimer=setInterval(()=>{
+    restLeft--;
+    if(restLeft<=0){
+      clearInterval(restTimer); restLeft=0;
+      paintRest();
+      if(navigator.vibrate) navigator.vibrate([120,60,120]);
+    } else paintRest();
+  },1000);
+}
+function skipRest(){clearInterval(restTimer);restLeft=0;paintRest()}
+function bumpRest(d){if(restLeft<=0)return;restLeft=Math.max(1,restLeft+d);paintRest()}
+function sectionProgress(di,sec,list){let total=0,done=0;list.forEach((e,j)=>{const sets=+e.sets||0;for(let k=0;k<sets;k++){total++;if(getLog(di,sec,j,k).done)done++}});return[done,total]}
+
+function render(){
+  const root=document.getElementById('app');
+  if(!plan){root.innerHTML='<div class=shell><div class=card>Loading…</div></div>';return}
+  if(view==='home') root.innerHTML=homeHTML();
+  else if(view==='day') root.innerHTML=dayPreviewHTML();
+  else if(view==='session') root.innerHTML=sessionHTML();
+  else if(view==='done') root.innerHTML=doneHTML();
+  if(view!=='session'){clearInterval(restTimer);restLeft=0}
+  paintRest();
+}
+function homeHTML(){
+  const di=Math.min(curDay, plan.week.days.length-1);
+  const day=plan.week.days[di];
+  const [done,total]=dayProgress(di);
+  const pct=total?Math.round(done/total*100):0;
+  const days=plan.week.days.map((d,i)=>{
+    const [dn,tn]=dayProgress(i); const fin=tn&&dn>=tn;
+    return `<button class="daychip ${i===di?'on':''} ${fin?'fin':''}" onclick="curDay=${i};render()"><span>Day ${i+1}</span>${fin?'✓':''}</button>`}).join('');
+  return `<div class=shell>
+<header class=top><div><p class=hello>Hi, ${esc(plan.name)}</p><h1>Today</h1><small>${esc(plan.week.title)}</small></div></header>
+<section class=hero>
+  <p class=label>Up next</p>
+  <h2>${esc(day.name)}</h2>
+  <p class=sub>${total} sets · ${done} logged · ${pct}%</p>
+  <div class=bar><i style="width:${pct}%"></i></div>
+  <button class="btn primary" onclick="view='session';sessionOn=true;activeSec=0;render()">Start workout</button>
+  <button class="btn ghost" onclick="view='day';render()">Preview plan</button>
+</section>
+<section class=block><p class=label>This week</p><div class=dayrow>${days}</div></section>
+<nav class=tabbar>
+  <button class=on onclick="view='home';render()">Home</button>
+  <button onclick="view='day';render()">Plan</button>
+  <button onclick="view='session';sessionOn=true;render()">Train</button>
+</nav></div>`}
+function dayPreviewHTML(){
+  const day=plan.week.days[curDay];
+  let body='';
+  grouped(day).forEach(([sec,list])=>{
+    body+=`<h3 class=sec>${SEC[sec]||esc(sec)}</h3>`+list.map(e=>{
+      const mode=logMode(sec);
+      const meta=mode==='time' ? `${esc(e.reps)} hold` : `${esc(e.sets)} sets × ${esc(e.reps)}`;
+      return `<div class=card><h3>${esc(e.name)}</h3>
+      <div class=meta>${meta}</div>
+      ${e.notes?`<div class=notes>${esc(e.notes)}</div>`:''}
+      ${e.link?`<a class=pill target=_blank href="${esc(e.link)}">▶ Form video</a>`:''}
+    </div>`}).join('');
+  });
+  return `<div class=shell>
+<header class=top><button class=back onclick="view='home';render()">←</button><div><h1>${esc(day.name)}</h1><small>Preview</small></div></header>
+<main class=pad>${body}</main>
+<div class="sticky footnav"><button class="btn primary" onclick="view='session';sessionOn=true;activeSec=0;render()">Start workout</button></div>
+<nav class=tabbar>
+  <button onclick="view='home';render()">Home</button>
+  <button class=on onclick="view='day';render()">Plan</button>
+  <button onclick="view='session';sessionOn=true;render()">Train</button>
+</nav></div>`}
+function exerciseBlock(e,sec,j){
+  const sets=+e.sets||0;
+  const rest=parseRest(e,sec);
+  const mode=logMode(sec);
+  let head='', setRows='';
+  if(mode==='time'){
+    head=`<div class="loghead time"><span>Set</span><span>Time (sec)</span><span></span></div>`;
+    for(let k=0;k<sets;k++){
+      const L=getLog(curDay,sec,j,k);
+      const t=L.t??prescTime(e); const done=!!L.done;
+      setRows+=`<div class="logrow time ${done?'done':''}">
+        <span class=setn>${k+1}</span>
+        <input inputmode=numeric placeholder="sec" value="${esc(t)}" onchange="setLog(${curDay},'${sec}',${j},${k},{t:this.value})">
+        <button class="check ${done?'on':''}" onclick="toggleSet(${curDay},'${sec}',${j},${k},${rest})">${done?'✓':''}</button>
+      </div>`;
+    }
+  } else if(mode==='time_reps'){
+    head=`<div class="loghead time_reps"><span>Set</span><span>Time</span><span>Reps</span><span></span></div>`;
+    for(let k=0;k<sets;k++){
+      const L=getLog(curDay,sec,j,k);
+      const t=L.t??prescTime(e); const r=L.r??prescReps(e); const done=!!L.done;
+      setRows+=`<div class="logrow time_reps ${done?'done':''}">
+        <span class=setn>${k+1}</span>
+        <input inputmode=numeric placeholder="sec" value="${esc(t)}" onchange="setLog(${curDay},'${sec}',${j},${k},{t:this.value})">
+        <input inputmode=numeric placeholder="reps" value="${esc(r)}" onchange="setLog(${curDay},'${sec}',${j},${k},{r:this.value})">
+        <button class="check ${done?'on':''}" onclick="toggleSet(${curDay},'${sec}',${j},${k},${rest})">${done?'✓':''}</button>
+      </div>`;
+    }
+  } else {
+    head=`<div class="loghead weight_reps"><span>Set</span><span>kg</span><span>Reps</span><span></span></div>`;
+    for(let k=0;k<sets;k++){
+      const L=getLog(curDay,sec,j,k);
+      const w=L.w??''; const r=L.r??prescReps(e); const done=!!L.done;
+      setRows+=`<div class="logrow weight_reps ${done?'done':''}">
+        <span class=setn>${k+1}</span>
+        <input inputmode=decimal placeholder="kg" value="${esc(w)}" onchange="setLog(${curDay},'${sec}',${j},${k},{w:this.value})">
+        <input inputmode=numeric placeholder="reps" value="${esc(r)}" onchange="setLog(${curDay},'${sec}',${j},${k},{r:this.value})">
+        <button class="check ${done?'on':''}" onclick="toggleSet(${curDay},'${sec}',${j},${k},${rest})">${done?'✓':''}</button>
+      </div>`;
+    }
+  }
+  const meta=mode==='time' ? `${esc(e.reps)} hold` : `${esc(e.sets)} × ${esc(e.reps)}`;
+  const restBadge=rest>0?`<span class=restbadge>Rest ${rest}s</span>`:'';
+  return `<div class="excard">
+    <h2 class=exname>${esc(e.name)}</h2>
+    <p class=meta>${meta}${e.notes?` · ${esc(e.notes)}`:''} ${restBadge}</p>
+    ${e.link?`<a class="pill" target=_blank href="${esc(e.link)}">▶ Form video</a>`:''}
+    ${head}${setRows}
+  </div>`;
+}
+function sessionHTML(){
+  const day=plan.week.days[curDay];
+  const secs=grouped(day);
+  if(!secs.length) return `<div class=shell><div class=pad><div class=card>No exercises.</div></div></div>`;
+  if(activeSec==null||activeSec>=secs.length) activeSec=0;
+  if(activeSec<0) activeSec=0;
+  const [sec,list]=secs[activeSec];
+  const [done,total]=sectionProgress(curDay,sec,list);
+  const pct=total?Math.round(done/total*100):0;
+  const steps=secs.map(([s],i)=>`<button type=button class="stepchip ${i===activeSec?'on':''}" onclick="activeSec=${i};render()">${SEC[s]||s}</button>`).join('');
+  const nextLabel=activeSec>=secs.length-1?'Finish':'Next';
+  return `<div class="shell session">
+<header class="top slim">
+  <button type=button class=back onclick="view='home';render()">✕</button>
+  <div><h1>${SEC[sec]||esc(sec)}</h1><small>${esc(day.name)} · ${activeSec+1}/${secs.length}</small></div>
+  <button type=button class="btn tiny" onclick="finishWorkout()">Finish</button>
+</header>
+<div class=steprow>${steps}</div>
+<main class="sess-scroll" id=sessScroll>
+  <p class=sub>${done}/${total} logged · ${pct}%</p>
+  <div class=bar><i style="width:${pct}%"></i></div>
+  ${list.map((e,j)=>exerciseBlock(e,sec,j)).join('')}
+</main>
+<footer class="footnav">
+  <button type=button class="btn ghost" ${activeSec<=0?'disabled':''} onclick="goSec(${Math.max(0,activeSec-1)})">Previous</button>
+  <button type=button class="btn primary" onclick="nextSec(${secs.length})">${nextLabel}</button>
+</footer>
+</div>`}
+function doneHTML(){
+  const [done,total]=dayProgress(curDay);
+  return `<div class=shell>
+<header class=top><div><h1>Workout done</h1><small>${esc(plan.week.days[curDay].name)}</small></div></header>
+<section class=hero center>
+  <div class=bigcheck>✓</div>
+  <h2>${done}/${total} sets logged</h2>
+  <p class=sub>Nice work. Your coach can see what you logged.</p>
+  <button class="btn primary" onclick="view='home';render()">Back home</button>
+</section></div>`}
+function toggleSet(d,sec,j,k,rest){
+  const L=getLog(d,sec,j,k); const next=!L.done;
+  setLog(d,sec,j,k,{done:next,r:L.r??'',w:L.w??'',t:L.t??''});
+  if(next && rest>0) startRest(rest); else render();
+}
+function goSec(i){activeSec=i;render();const el=document.getElementById('sessScroll');if(el)el.scrollTop=0}
+function nextSec(n){if(activeSec>=n-1) finishWorkout(); else goSec(activeSec+1)}
+function finishWorkout(){clearInterval(restTimer);restLeft=0;sessionOn=false;view='done';render()}
+
+loadLocal();
+Promise.all([
+  fetch('/api/plan/'+tok).then(r=>r.ok?r.json():Promise.reject()),
+  fetch('/api/logs/'+tok).then(r=>r.ok?r.json():{logs:{}}).catch(()=>({logs:{}}))
+]).then(([p,l])=>{
+  plan=p;
+  if(l?.logs&&Object.keys(l.logs).length){logs={...logs,...l.logs};localStorage['sf-logs:'+tok]=JSON.stringify(logs)}
+  curDay=Math.min(todayIndex(), p.week.days.length-1);
+  render();
+}).catch(()=>{document.getElementById('app').innerHTML='<div class=shell><div class=card>Plan not found. Check your link with your coach.</div></div>'});
+</script></body></html>

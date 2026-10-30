@@ -1,0 +1,22 @@
+{"clients":[{"id":"demo","name":"Demo Client","token":"demo-7f3k","week":{"title":"Week 1 – Strength Foundation","days":[
+{"name":"Day 1 – Lower (Squat)","exercises":[
+{"name":"Back Squat","sets":4,"reps":"6","notes":"RPE 7, 2-3 min rest","link":"https://www.youtube.com/results?search_query=back+squat+form"},
+{"name":"Romanian Deadlift","sets":3,"reps":"8","notes":"Hinge, soft knees","link":"https://www.youtube.com/results?search_query=romanian+deadlift+form"},
+{"name":"Walking Lunges","sets":3,"reps":"10/leg","notes":"","link":"https://www.youtube.com/results?search_query=walking+lunge+form"},
+{"name":"Plank","sets":3,"reps":"40s","notes":"","link":""}]},
+{"name":"Day 2 – Upper (Push)","exercises":[
+{"name":"Bench Press","sets":4,"reps":"6","notes":"Pause 1s on chest","link":"https://www.youtube.com/results?search_query=bench+press+form"},
+{"name":"Overhead Press","sets":3,"reps":"8","notes":"","link":"https://www.youtube.com/results?search_query=overhead+press+form"},
+{"name":"Incline DB Press","sets":3,"reps":"10","notes":"","link":""},
+{"name":"Triceps Pushdown","sets":3,"reps":"12","notes":"","link":""}]},
+{"name":"Day 3 – Rest / Walk","exercises":[{"name":"Easy walk","sets":1,"reps":"30 min","notes":"Zone 2, 8k+ steps","link":""}]},
+{"name":"Day 4 – Lower (Deadlift)","exercises":[
+{"name":"Deadlift","sets":4,"reps":"5","notes":"Brace, bar close to shins","link":"https://www.youtube.com/results?search_query=deadlift+form"},
+{"name":"Bulgarian Split Squat","sets":3,"reps":"8/leg","notes":"","link":"https://www.youtube.com/results?search_query=bulgarian+split+squat+form"},
+{"name":"Leg Curl","sets":3,"reps":"12","notes":"","link":""},
+{"name":"Calf Raise","sets":3,"reps":"15","notes":"","link":""}]},
+{"name":"Day 5 – Upper (Pull)","exercises":[
+{"name":"Pull-ups / Lat Pulldown","sets":4,"reps":"8","notes":"Full hang","link":"https://www.youtube.com/results?search_query=lat+pulldown+form"},
+{"name":"Barbell Row","sets":3,"reps":"8","notes":"","link":"https://www.youtube.com/results?search_query=barbell+row+form"},
+{"name":"Face Pull","sets":3,"reps":"15","notes":"","link":""},
+{"name":"DB Curl","sets":3,"reps":"12","notes":"","link":""}]}]}}]}

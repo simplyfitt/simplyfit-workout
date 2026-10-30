@@ -1,0 +1,18 @@
+<!doctype html><meta charset="utf-8"><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href=/style.css><title>SimplyFit – Coach</title>
+<header><h1>SimplyFit Coach</h1><small>Plans & client links</small></header><main>
+<div class=card><label>Client</label><select id=sel onchange=pick()></select>
+<p><input id=nid placeholder="new client id (e.g. priya)"> <button class="btn alt" onclick=add()>+ Add client</button></p></div>
+<div class=card><label>Name</label><input id=nm><label>Week plan (JSON: {title, days:[{name, exercises:[{name,sets,reps,notes,link}]}]})</label>
+<textarea id=js></textarea><button class=btn onclick=saveIt()>Save plan</button><div id=out></div></div></main>
+<script>
+let cid;const tpl={title:'Week 1',days:[1,2,3,4,5].map(i=>({name:'Day '+i,exercises:[{name:'Exercise',sets:3,reps:'10',notes:'',link:''}]}))};
+async function list(sel){const cs=await (await fetch('/api/clients')).json();
+document.getElementById('sel').innerHTML=cs.map(c=>`<option value=${c.id}>${c.name}</option>`).join('');if(sel)document.getElementById('sel').value=sel;pick()}
+async function pick(){cid=sel.value;const c=await (await fetch('/api/clients/'+cid)).json();nm.value=c.name;js.value=JSON.stringify(c.week,null,2);link(c.token)}
+function link(t){const u=location.origin+'/c/'+t;out.innerHTML=`<p>Client link: <a href="${u}" target=_blank>${u}</a> <button class="btn alt" onclick="navigator.clipboard.writeText('${u}')">Copy</button></p>`}
+async function add(){const id=nid.value.trim().toLowerCase().replace(/[^\w-]/g,'-');if(!id)return;
+await fetch('/api/clients/'+id,{method:'PUT',body:JSON.stringify({name:id,week:tpl})});nid.value='';list(id)}
+async function saveIt(){let w;try{w=JSON.parse(js.value)}catch(e){return out.innerHTML='<p>Invalid JSON: '+e.message+'</p>'}
+const c=await (await fetch('/api/clients/'+cid,{method:'PUT',body:JSON.stringify({name:nm.value,week:w})})).json();link(c.token);out.insertAdjacentHTML('afterbegin','<p class=meta>✓ Saved</p>');list(cid)}
+list();
+</script>

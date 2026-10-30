@@ -1,0 +1,454 @@
+{
+  "id": "bhakti",
+  "name": "Bhakti",
+  "token": "bhakti-w2",
+  "week": {
+    "title": "WEEK 2 \u2014 Bhakti",
+    "days": [
+      {
+        "name": "Day 1",
+        "exercises": [
+          {
+            "name": "upper back mfr",
+            "sets": 1,
+            "reps": "30 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=8CGpN_ratU4",
+            "section": "warmup"
+          },
+          {
+            "name": "Glutes Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/UL7589V2fVM",
+            "section": "warmup"
+          },
+          {
+            "name": "Quadriceps Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/_sqfk_smpwk",
+            "section": "warmup"
+          },
+          {
+            "name": "Lat Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=ht2_L4wGH4w",
+            "section": "warmup"
+          },
+          {
+            "name": "Core Bracing",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=J_2ImNPjxtc",
+            "section": "main"
+          },
+          {
+            "name": "World's Greatest Stretch",
+            "sets": 2,
+            "reps": "5 each",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=pO3KPQ5fzJ0",
+            "section": "main"
+          },
+          {
+            "name": "90/90 hip Switch",
+            "sets": 2,
+            "reps": "10 each",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=m51AZSXMvEA",
+            "section": "main"
+          },
+          {
+            "name": "IYT",
+            "sets": 2,
+            "reps": "10 each",
+            "notes": "",
+            "link": "https://youtu.be/chl4NHCPN98?si=cNZn7M8OqKrrLmi4",
+            "section": "main"
+          },
+          {
+            "name": "Glute Bridge",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://youtube.com/shorts/RrU4zx4ysnI?si=4MyZcMNvdkAiGHfL",
+            "section": "main"
+          },
+          {
+            "name": "Dead Bugs",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=g_BYB0R-4Ws",
+            "section": "main"
+          },
+          {
+            "name": "bear hold",
+            "sets": 2,
+            "reps": "30 sec hold",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/3cHXtZj-Kmo",
+            "section": "main"
+          },
+          {
+            "name": "kneeling quad stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=U7AOY3obRv4",
+            "section": "cooldown"
+          },
+          {
+            "name": "pegion glute stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=op-eDU9eNqM",
+            "section": "cooldown"
+          },
+          {
+            "name": "kneeling hamstring stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=MiAXGtx_J0M",
+            "section": "cooldown"
+          },
+          {
+            "name": "Standing Calf Stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/kEsmsvaaXAo",
+            "section": "cooldown"
+          }
+        ]
+      },
+      {
+        "name": "Day 2",
+        "exercises": [
+          {
+            "name": "Hip Flexor Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "Light, controlled \u00b7 Rest 30.0",
+            "link": "https://www.youtube.com/watch?v=0JfVjwYUzg0",
+            "section": "warmup"
+          },
+          {
+            "name": "Glutes Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/UL7589V2fVM",
+            "section": "warmup"
+          },
+          {
+            "name": "Quadriceps Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/_sqfk_smpwk",
+            "section": "warmup"
+          },
+          {
+            "name": "Hamstrings roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=78ZE9Dznsfg",
+            "section": "warmup"
+          },
+          {
+            "name": "SL Hip Thrust",
+            "sets": 2,
+            "reps": "6 each",
+            "notes": "",
+            "link": "https://youtube.com/shorts/GqVK-IKtZaU?si=1yio0lSrQ4-TJROk",
+            "section": "main"
+          },
+          {
+            "name": "Step-ups",
+            "sets": 2,
+            "reps": "8 reps each leg",
+            "notes": "",
+            "link": "https://youtu.be/91xCEkwXxv0?si=Ajn3B6OuxmysvzTN",
+            "section": "main"
+          },
+          {
+            "name": "Plank hold",
+            "sets": 2,
+            "reps": "30 sec",
+            "notes": "",
+            "link": "https://youtube.com/shorts/xe2MXatLTUw?si=UnR9kLlgNcftpbv7",
+            "section": "main"
+          },
+          {
+            "name": "Knee Push-ups",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://youtube.com/shorts/rrVwNeIpy-k?si=ZSMnCyLjcabDC2c4",
+            "section": "main"
+          },
+          {
+            "name": "Dead Bugs",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=g_BYB0R-4Ws",
+            "section": "main"
+          },
+          {
+            "name": "wall sit",
+            "sets": 2,
+            "reps": "30 sec hold",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=6Li55TURhVg",
+            "section": "main"
+          },
+          {
+            "name": "kneeling quad stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=U7AOY3obRv4",
+            "section": "cooldown"
+          },
+          {
+            "name": "pegion glute stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=op-eDU9eNqM",
+            "section": "cooldown"
+          },
+          {
+            "name": "kneeling hamstring stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=MiAXGtx_J0M",
+            "section": "cooldown"
+          },
+          {
+            "name": "Standing Calf Stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/kEsmsvaaXAo",
+            "section": "cooldown"
+          }
+        ]
+      },
+      {
+        "name": "Day 3",
+        "exercises": [
+          {
+            "name": "upper back mfr",
+            "sets": 1,
+            "reps": "30 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=8CGpN_ratU4",
+            "section": "warmup"
+          },
+          {
+            "name": "Glutes Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/UL7589V2fVM",
+            "section": "warmup"
+          },
+          {
+            "name": "Quadriceps Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/_sqfk_smpwk",
+            "section": "warmup"
+          },
+          {
+            "name": "Lat Roll",
+            "sets": 1,
+            "reps": "30 sec each",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=ht2_L4wGH4w",
+            "section": "warmup"
+          },
+          {
+            "name": "lateral squat",
+            "sets": 2,
+            "reps": "6-8 each",
+            "notes": "",
+            "link": "https://youtu.be/0lLIWWSmMm4?si=BrQ_2sbblB3-qOpq",
+            "section": "main"
+          },
+          {
+            "name": "Hamstring Bridge",
+            "sets": 2,
+            "reps": "20 sec hold",
+            "notes": "",
+            "link": "https://youtube.com/shorts/vu06oKYEwdY?si=HADqv5yVTPMjlD1F",
+            "section": "main"
+          },
+          {
+            "name": "Incline push-ups",
+            "sets": 2,
+            "reps": "10 reps",
+            "notes": "",
+            "link": "https://youtube.com/shorts/hTm9vkhNCec?si=nMrheV6uQBFnDYLL",
+            "section": "main"
+          },
+          {
+            "name": "V Hold",
+            "sets": 2,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://youtube.com/shorts/GT0fJIRVRXg?si=-v8FHWEnRwYMsTr-",
+            "section": "main"
+          },
+          {
+            "name": "Towel Pulls",
+            "sets": 2,
+            "reps": "8.0",
+            "notes": "",
+            "link": "https://youtube.com/shorts/gZSe3_vjH9I?si=dMrneszK9HexiZOK",
+            "section": "main"
+          },
+          {
+            "name": "bodyweight squats",
+            "sets": 2,
+            "reps": "15 reps",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=l83R5PblSMA",
+            "section": "main"
+          },
+          {
+            "name": "kneeling quad stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=U7AOY3obRv4",
+            "section": "cooldown"
+          },
+          {
+            "name": "pegion glute stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=op-eDU9eNqM",
+            "section": "cooldown"
+          },
+          {
+            "name": "kneeling hamstring stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=MiAXGtx_J0M",
+            "section": "cooldown"
+          },
+          {
+            "name": "Standing Calf Stretch",
+            "sets": 1,
+            "reps": "20.0",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/kEsmsvaaXAo",
+            "section": "cooldown"
+          }
+        ]
+      },
+      {
+        "name": "Day 4 \u2014 Mobility / Recovery",
+        "exercises": [
+          {
+            "name": "Hamstrings roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=78ZE9Dznsfg",
+            "section": "main"
+          },
+          {
+            "name": "Quadriceps Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/_sqfk_smpwk",
+            "section": "main"
+          },
+          {
+            "name": "Glutes Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/UL7589V2fVM",
+            "section": "main"
+          },
+          {
+            "name": "Adductor Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=n5g0rjsTT1k",
+            "section": "main"
+          },
+          {
+            "name": "Calf Muscle release",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/zn1tcngoD8U",
+            "section": "main"
+          },
+          {
+            "name": "IT Band Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=eI9qLfSlCuI",
+            "section": "main"
+          },
+          {
+            "name": "Tibialis Anterior (Shin) Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=C5TCKZ7k_cg",
+            "section": "main"
+          },
+          {
+            "name": "Hip Flexor Roll",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=0JfVjwYUzg0",
+            "section": "main"
+          },
+          {
+            "name": "Back muscles release",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/6PuOggYPcjo",
+            "section": "main"
+          },
+          {
+            "name": "Thoracic Mobilization",
+            "sets": 2,
+            "reps": "\u2014",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/IBgT9EpudWA",
+            "section": "main"
+          }
+        ]
+      }
+    ]
+  }
+}
