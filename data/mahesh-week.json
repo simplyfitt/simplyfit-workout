@@ -1,0 +1,627 @@
+{
+  "id": "mahesh",
+  "name": "Mahesh",
+  "token": "mahesh-w4",
+  "week": {
+    "title": "WEEK 4 \u2014 Mahesh",
+    "days": [
+      {
+        "name": "Day 1 \u2014 Push",
+        "exercises": [
+          {
+            "name": "Shoulder External Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Light, controlled \u00b7 Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=ybNV36DoRfY",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder Internal Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=7bXPgfGzW9k",
+            "section": "warmup"
+          },
+          {
+            "name": "IYT",
+            "sets": 1,
+            "reps": "10 each",
+            "notes": "Rest 30 sec",
+            "link": "https://youtube.com/shorts/tlcuHSz1TQE?si=Nto6OXSsxpTZc1RN",
+            "section": "warmup"
+          },
+          {
+            "name": "Cat Camel",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+            "section": "warmup"
+          },
+          {
+            "name": "QL stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://youtube.com/shorts/R3-sFlmMUjc?si=gQfoQsZazH8yJBC_",
+            "section": "warmup"
+          },
+          {
+            "name": "DB bench press",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "",
+            "section": "main"
+          },
+          {
+            "name": "Rope push-down",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtu.be/-xa-6cQaZKY?si=j3dfyI-NbB3tY7VB",
+            "section": "main"
+          },
+          {
+            "name": "Landmine press",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "",
+            "section": "main"
+          },
+          {
+            "name": "SA tricep extension",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "",
+            "section": "main"
+          },
+          {
+            "name": "Chest flys",
+            "sets": 2,
+            "reps": "10-12",
+            "notes": "Rest 45 sec",
+            "link": "https://youtu.be/eGjt4lk6g34?si=JuLBb58oK9G08JkT",
+            "section": "main"
+          },
+          {
+            "name": "DB lateral raise",
+            "sets": 2,
+            "reps": "10-12",
+            "notes": "Rest 45 sec",
+            "link": "",
+            "section": "main"
+          },
+          {
+            "name": "rear delt flys",
+            "sets": 2,
+            "reps": "12",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/7tgx6QHB0-A?si=oJy4V3gEyNpT--DX",
+            "section": "main"
+          }
+        ]
+      },
+      {
+        "name": "Day 2 \u2014 Pull",
+        "exercises": [
+          {
+            "name": "Arm circles",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://youtube.com/shorts/lzR7tzI1JUI?si=nyl8LLCD9FpTCNl8",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder External Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=ybNV36DoRfY",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder Internal Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=7bXPgfGzW9k",
+            "section": "warmup"
+          },
+          {
+            "name": "Doorway Chest Stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=M850sCj9LHQ",
+            "section": "warmup"
+          },
+          {
+            "name": "Cross Arm Stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+            "section": "warmup"
+          },
+          {
+            "name": "Lat-pull down",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/bNmvKpJSWKM?si=Pq2FR317EHdk_dbI",
+            "section": "main"
+          },
+          {
+            "name": "single arm row",
+            "sets": 2,
+            "reps": "8 each",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/i9BJwVCK5VQ?si=emlFK2gOAb_VvGDf",
+            "section": "main"
+          },
+          {
+            "name": "DB bicep curl with twist",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/sHA-yToounA?si=xfo3RXmyzcXLGfpl",
+            "section": "main"
+          },
+          {
+            "name": "Rear delt fly",
+            "sets": 2,
+            "reps": "10-12",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/Sw-KEbOilIc?si=BIHenH3Ne1i4y1NB",
+            "section": "main"
+          },
+          {
+            "name": "preacher curl",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtu.be/Ja6ZlIDONac?si=Qph9MIRcDdk39xUd",
+            "section": "main"
+          },
+          {
+            "name": "DB shrugs",
+            "sets": 2,
+            "reps": "12-14",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/rFsSeClGnNA?si=ce89gag18Z63jajM",
+            "section": "main"
+          },
+          {
+            "name": "leg-up crunch",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtube.com/shorts/bzQDWmG8v08?si=kNzBOlTHUPMjTZ6p",
+            "section": "optional"
+          },
+          {
+            "name": "hollow body hold",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtube.com/shorts/YHBp6fvXYcI?si=KDKRoc8CvHiingHu",
+            "section": "optional"
+          },
+          {
+            "name": "seated battle ropes",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtube.com/shorts/zMI9FCcq0DU?si=mFRjBhyu2ixeGGbO",
+            "section": "optional"
+          },
+          {
+            "name": "Doorway Chest Stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=M850sCj9LHQ",
+            "section": "cooldown"
+          },
+          {
+            "name": "Cross Arm Stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+            "section": "cooldown"
+          },
+          {
+            "name": "kneeling quad stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=U7AOY3obRv4",
+            "section": "cooldown"
+          },
+          {
+            "name": "Pigeon glute stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=op-eDU9eNqM",
+            "section": "cooldown"
+          }
+        ]
+      },
+      {
+        "name": "Day 3 \u2014 Core",
+        "exercises": [
+          {
+            "name": "Cat Camel",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+            "section": "warmup"
+          },
+          {
+            "name": "Open Book",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=8MXF5sA0rfg",
+            "section": "warmup"
+          },
+          {
+            "name": "Thoracic Mobilization",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://www.youtube.com/shorts/IBgT9EpudWA",
+            "section": "warmup"
+          },
+          {
+            "name": "thoracic supine windmill",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://youtube.com/shorts/IM9YmeBeKTA?si=gGqRllbJEFQIkodi",
+            "section": "warmup"
+          },
+          {
+            "name": "World's Greatest Stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=pO3KPQ5fzJ0",
+            "section": "warmup"
+          },
+          {
+            "name": "Full crunch",
+            "sets": 2,
+            "reps": "15",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/ZKw4t23ERuw?si=AdUx4l3cz_yfQAxu",
+            "section": "main"
+          },
+          {
+            "name": "Hollow body rock",
+            "sets": 2,
+            "reps": "10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/tWZBamV2tjc?si=5qlpo4g-7trUdZ0j",
+            "section": "main"
+          },
+          {
+            "name": "Leg Raises",
+            "sets": 2,
+            "reps": "15",
+            "notes": "Rest 45 sec",
+            "link": "https://www.youtube.com/shorts/FijNSgahpz0",
+            "section": "main"
+          },
+          {
+            "name": "Mountain climbers",
+            "sets": 2,
+            "reps": "10 each",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/hZb6jTbCLeE?si=4vc4_xGF_SzIwbJs",
+            "section": "main"
+          },
+          {
+            "name": "Full plank with rows",
+            "sets": 2,
+            "reps": "8 each",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/GfptgUS4QRA?si=srZHqmUxstZ39pYr",
+            "section": "main"
+          },
+          {
+            "name": "cycle endurance",
+            "sets": 2,
+            "reps": "5 min",
+            "notes": "Intensity MAX \u00b7 20SEC on / 40SEC off",
+            "link": "",
+            "section": "cardio"
+          }
+        ]
+      },
+      {
+        "name": "Day 4 \u2014 Push&Leg",
+        "exercises": [
+          {
+            "name": "Shoulder External Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=ybNV36DoRfY",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder Internal Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=7bXPgfGzW9k",
+            "section": "warmup"
+          },
+          {
+            "name": "Cat Camel",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=JJkjIKlimW8",
+            "section": "warmup"
+          },
+          {
+            "name": "QL stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "",
+            "link": "https://youtube.com/shorts/R3-sFlmMUjc?si=gQfoQsZazH8yJBC_",
+            "section": "warmup"
+          },
+          {
+            "name": "DB incline press",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/8fXfwG4ftaQ?si=BDYKRr7Wdmw3yzzT",
+            "section": "main"
+          },
+          {
+            "name": "Wall sit",
+            "sets": 2,
+            "reps": "45 sec hold",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/mDdLC-yKudY?si=rh4PA9WsoJFHjaKO",
+            "section": "main"
+          },
+          {
+            "name": "SL extension",
+            "sets": 2,
+            "reps": "8-10 each",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/WwTJM8VxpvE?si=n2FklsQEQHgUX3Nd",
+            "section": "main"
+          },
+          {
+            "name": "pully overhead extension",
+            "sets": 2,
+            "reps": "10-12",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/wFnN-o9PZIg?si=mp4Vge6ArvdmsJUt",
+            "section": "main"
+          },
+          {
+            "name": "Bulgarian split squat",
+            "sets": 2,
+            "reps": "8-10 each",
+            "notes": "Rest 45 sec",
+            "link": "",
+            "section": "main"
+          },
+          {
+            "name": "Adduction Machine",
+            "sets": 2,
+            "reps": "10-12",
+            "notes": "Rest 45 sec",
+            "link": "https://www.youtube.com/watch?v=CjAVezAggkI",
+            "section": "main"
+          },
+          {
+            "name": "wall tibia raises",
+            "sets": 2,
+            "reps": "15",
+            "notes": "Rest 45 sec",
+            "link": "https://www.youtube.com/watch?v=OPEuhclsTUQ",
+            "section": "main"
+          },
+          {
+            "name": "Hollow body rocks",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtube.com/shorts/tWZBamV2tjc?si=vCe4o9kQN3ef0CA7",
+            "section": "optional"
+          },
+          {
+            "name": "full crunches",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtube.com/shorts/ZKw4t23ERuw?si=cMg7tBdMoWYbTwg4",
+            "section": "optional"
+          },
+          {
+            "name": "russian twist",
+            "sets": 3,
+            "reps": "20sec",
+            "notes": "slow and controled reps \u00b7 Rest 15sec",
+            "link": "https://youtu.be/DJQGX2J4IVw?si=CdJkvTfIwCh3ebvI",
+            "section": "optional"
+          },
+          {
+            "name": "Doorway Chest Stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=M850sCj9LHQ",
+            "section": "cooldown"
+          },
+          {
+            "name": "Cross Arm Stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+            "section": "cooldown"
+          },
+          {
+            "name": "kneeling quad stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=U7AOY3obRv4",
+            "section": "cooldown"
+          },
+          {
+            "name": "Pigeon glute stretch",
+            "sets": 1,
+            "reps": "20 sec",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=op-eDU9eNqM",
+            "section": "cooldown"
+          }
+        ]
+      },
+      {
+        "name": "Day 5 \u2014 Pull&Leg",
+        "exercises": [
+          {
+            "name": "Arm circles",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://youtube.com/shorts/lzR7tzI1JUI?si=nyl8LLCD9FpTCNl8",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder External Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=ybNV36DoRfY",
+            "section": "warmup"
+          },
+          {
+            "name": "Shoulder Internal Rotation",
+            "sets": 1,
+            "reps": "12",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=7bXPgfGzW9k",
+            "section": "warmup"
+          },
+          {
+            "name": "Doorway Chest Stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=M850sCj9LHQ",
+            "section": "warmup"
+          },
+          {
+            "name": "Cross Arm Stretch",
+            "sets": 1,
+            "reps": "10",
+            "notes": "Rest 30 sec",
+            "link": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+            "section": "warmup"
+          },
+          {
+            "name": "hamstring curl machine",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Single leg \u00b7 Rest 45 sec",
+            "link": "https://youtu.be/SiwJ_T62l9c?si=8IYk1-fJ-bVy87uN",
+            "section": "main"
+          },
+          {
+            "name": "staggered RDL",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/gw3z148hJiU?si=rK_BLbmPFhvrxYoI",
+            "section": "main"
+          },
+          {
+            "name": "Inverted rows",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/vZy_Eu_Z0WA?si=X-SzeN-s6BZXhOw1",
+            "section": "main"
+          },
+          {
+            "name": "DB Hip thrust",
+            "sets": 2,
+            "reps": "8-10",
+            "notes": "Single leg \u00b7 Rest 45 sec",
+            "link": "https://youtube.com/shorts/hKXqCXSXylA?si=xLzeEJpahkpMOQQ8",
+            "section": "main"
+          },
+          {
+            "name": "glute kickback",
+            "sets": 2,
+            "reps": "10-12 each",
+            "notes": "Rest 45 sec",
+            "link": "https://youtu.be/rONpWaNIhE8?si=bFyNtMopWOYiFTCl",
+            "section": "main"
+          },
+          {
+            "name": "Hammer curl",
+            "sets": 2,
+            "reps": "10",
+            "notes": "Rest 45 sec",
+            "link": "https://youtube.com/shorts/0qzSDAfBzSw?si=EvAWtUO_YkNSWKua",
+            "section": "main"
+          },
+          {
+            "name": "Doorway Chest Stretch",
+            "sets": 1,
+            "reps": "20",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=M850sCj9LHQ",
+            "section": "cooldown"
+          },
+          {
+            "name": "Cross Arm Stretch",
+            "sets": 1,
+            "reps": "20",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=-1K0m5ywRcY",
+            "section": "cooldown"
+          },
+          {
+            "name": "Triceps Stretch",
+            "sets": 1,
+            "reps": "20",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=Uvk1Y8O1_yM",
+            "section": "cooldown"
+          },
+          {
+            "name": "Traps Stretch",
+            "sets": 1,
+            "reps": "20",
+            "notes": "",
+            "link": "https://www.youtube.com/watch?v=-r0eoFS7_5Q",
+            "section": "cooldown"
+          }
+        ]
+      }
+    ]
+  }
+}
